@@ -1,0 +1,31 @@
+# Python 缓存和构建产物
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+build/
+dist/
+*.egg-info/
+
+# 虚拟环境
+.venv/
+venv/
+env/
+ENV/
+
+# 测试、覆盖率和本地运行产物
+.coverage
+.coverage.*
+htmlcov/
+*.log
+
+# 本地配置和密钥
+.env
+.env.*
+!.env.example
+
+# macOS / VS Code
+.DS_Store
+.vscode/
