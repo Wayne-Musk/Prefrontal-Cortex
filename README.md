@@ -21,24 +21,6 @@ python -m wm.code_loop
 交给现有的 `WMAgent -> MCTSPlanner`，再把 `executor.commit`、预测误差和
 `learner.update` 接回 `OpsWorld`、`ModelMonitor` 与 `SkillCompiler`。
 
-### 闭环流程图
-
-```mermaid
-flowchart TD
-   A[任务与初始观测] --> B[更新 belief\nP(s | o_1...o_t)]
-   B --> C[生成候选动作]
-   C --> D[世界模型内 rollout\n模拟未来 H 步]
-   D --> E[价值评估\n目标 + 信息增益 - 风险 - 约束]
-   E --> F[MCTS / search.select]
-   F --> G[只提交当前一步]
-   G --> H[真实环境返回观测与状态]
-   H --> I[预测 vs 现实\nsurprise / error]
-   I --> J[更新模型可信度与技能算子]
-   J --> K{任务完成?}
-   K -- 否 --> B
-   K -- 是 --> L[返回结果]
-```
-
 ### Codex / Workbuddy 工作流映射图
 
 这张图展示一个编码型 Workbuddy 如何使用同一套世界模型：技能只负责
