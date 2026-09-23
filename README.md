@@ -2,7 +2,7 @@
 
 一个**可运行**的 World Model Agent 架构，以及它相对「skill + 角色扮演」范式的对照实验。
 
-零第三方依赖，纯标准库，Python 3.9+（实测 3.13）。
+零第三方依赖，纯标准库，Python 3.9+。
 
 ```bash
 python bench.py                 # 训练分布
